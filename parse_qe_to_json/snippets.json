@@ -1,0 +1,153 @@
+{
+  "& CONTROL": {
+    "prefix": "& CONTROL",
+    "body": [
+      "&& CONTROL",
+      "  ${1:var} = ${2:value}",
+      "/"
+    ],
+    "description": "namelist & CONTROL"
+  },
+  "& SYSTEM": {
+    "prefix": "& SYSTEM",
+    "body": [
+      "&& SYSTEM",
+      "  ${1:var} = ${2:value}",
+      "/"
+    ],
+    "description": "namelist & SYSTEM"
+  },
+  "& ELECTRONS": {
+    "prefix": "& ELECTRONS",
+    "body": [
+      "&& ELECTRONS",
+      "  ${1:var} = ${2:value}",
+      "/"
+    ],
+    "description": "namelist & ELECTRONS"
+  },
+  "& IONS": {
+    "prefix": "& IONS",
+    "body": [
+      "&& IONS",
+      "  ${1:var} = ${2:value}",
+      "/"
+    ],
+    "description": "namelist & IONS"
+  },
+  "& CELL": {
+    "prefix": "& CELL",
+    "body": [
+      "&& CELL",
+      "  ${1:var} = ${2:value}",
+      "/"
+    ],
+    "description": "namelist & CELL"
+  },
+  "& FCP": {
+    "prefix": "& FCP",
+    "body": [
+      "&& FCP",
+      "  ${1:var} = ${2:value}",
+      "/"
+    ],
+    "description": "namelist & FCP"
+  },
+  "& RISM": {
+    "prefix": "& RISM",
+    "body": [
+      "&& RISM",
+      "  ${1:var} = ${2:value}",
+      "/"
+    ],
+    "description": "namelist & RISM"
+  },
+  "ATOMIC_SPECIES": {
+    "prefix": "ATOMIC_SPECIES",
+    "body": [
+      "ATOMIC_SPECIES",
+      "${1:...}"
+    ],
+    "description": "card ATOMIC_SPECIES"
+  },
+  "ATOMIC_POSITIONS": {
+    "prefix": "ATOMIC_POSITIONS",
+    "body": [
+      "ATOMIC_POSITIONS { alat | bohr | angstrom | crystal | crystal_sg }",
+      "${1:...}"
+    ],
+    "description": "card ATOMIC_POSITIONS"
+  },
+  "K_POINTS": {
+    "prefix": "K_POINTS",
+    "body": [
+      "K_POINTS { tpiba | automatic | crystal | gamma | tpiba_b | crystal_b | tpiba_c | crystal_c }",
+      "${1:...}"
+    ],
+    "description": "card K_POINTS"
+  },
+  "ADDITIONAL_K_POINTS": {
+    "prefix": "ADDITIONAL_K_POINTS",
+    "body": [
+      "ADDITIONAL_K_POINTS { tpiba | crystal | tpiba_b | crystal_b | tpiba_c | crystal_c }",
+      "${1:...}"
+    ],
+    "description": "card ADDITIONAL_K_POINTS"
+  },
+  "CELL_PARAMETERS": {
+    "prefix": "CELL_PARAMETERS",
+    "body": [
+      "CELL_PARAMETERS { alat | bohr | angstrom }",
+      "${1:...}"
+    ],
+    "description": "card CELL_PARAMETERS"
+  },
+  "CONSTRAINTS": {
+    "prefix": "CONSTRAINTS",
+    "body": [
+      "CONSTRAINTS",
+      "${1:...}"
+    ],
+    "description": "card CONSTRAINTS"
+  },
+  "OCCUPATIONS": {
+    "prefix": "OCCUPATIONS",
+    "body": [
+      "OCCUPATIONS",
+      "${1:...}"
+    ],
+    "description": "card OCCUPATIONS"
+  },
+  "ATOMIC_VELOCITIES": {
+    "prefix": "ATOMIC_VELOCITIES",
+    "body": [
+      "ATOMIC_VELOCITIES",
+      "${1:...}"
+    ],
+    "description": "card ATOMIC_VELOCITIES"
+  },
+  "ATOMIC_FORCES": {
+    "prefix": "ATOMIC_FORCES",
+    "body": [
+      "ATOMIC_FORCES",
+      "${1:...}"
+    ],
+    "description": "card ATOMIC_FORCES"
+  },
+  "SOLVENTS": {
+    "prefix": "SOLVENTS",
+    "body": [
+      "SOLVENTS { 1/cell | mol/L | g/cm^3 }",
+      "${1:...}"
+    ],
+    "description": "card SOLVENTS"
+  },
+  "HUBBARD": {
+    "prefix": "HUBBARD",
+    "body": [
+      "HUBBARD { atomic | ortho-atomic | norm-atomic | wf | pseudo }",
+      "${1:...}"
+    ],
+    "description": "card HUBBARD"
+  }
+}

@@ -1,0 +1,2626 @@
+{
+  "variables": {
+    "& CONTROL.calculation": {
+      "type": "String",
+      "options": [
+        "'scf'",
+        "'nscf'",
+        "'bands'",
+        "'relax'",
+        "'md'",
+        "'vc-relax'",
+        "'vc-md'"
+      ],
+      "default": "'scf'",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.title": {
+      "type": "String",
+      "options": [],
+      "default": "' '",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.verbosity": {
+      "type": "String",
+      "options": [
+        "'high'",
+        "'low'",
+        "'debug'",
+        "'medium'",
+        "'default'",
+        "'minimal'"
+      ],
+      "default": "'low'",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.restart_mode": {
+      "type": "String",
+      "options": [
+        "'from_scratch'",
+        "'restart'",
+        "'file'"
+      ],
+      "default": "'from_scratch'",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.wf_collect": {
+      "type": "Logical",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.nstep": {
+      "type": "Integer",
+      "options": [],
+      "default": "1 if calculation == 'scf', 'nscf', 'bands'; 50 for the other cases",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.iprint": {
+      "type": "Integer",
+      "options": [
+        "'md'"
+      ],
+      "default": "write only at convergence",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.tstress": {
+      "type": "Logical",
+      "options": [
+        ".true.",
+        ".false."
+      ],
+      "default": ".false.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.tprnfor": {
+      "type": "Logical",
+      "options": [
+        ".true.",
+        ".false."
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.dt": {
+      "type": "Real",
+      "options": [],
+      "default": "20.D0",
+      "range": null,
+      "units": "Ry",
+      "section": "& CONTROL"
+    },
+    "& CONTROL.outdir": {
+      "type": "String",
+      "options": [],
+      "default": "value of the ESPRESSO_TMPDIR environment variable if set; current directory ('./') otherwise",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.wfcdir": {
+      "type": "String",
+      "options": [],
+      "default": "same as outdir",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.prefix": {
+      "type": "String",
+      "options": [],
+      "default": "'pwscf'",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.lkpoint_dir": {
+      "type": "Logical",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.max_seconds": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D+7, or 150 days, i.e. no time limit",
+      "range": null,
+      "units": "s",
+      "section": "& CONTROL"
+    },
+    "& CONTROL.etot_conv_thr": {
+      "type": "Real",
+      "options": [],
+      "default": "1.0D-4",
+      "range": null,
+      "units": "a.u.",
+      "section": "& CONTROL"
+    },
+    "& CONTROL.forc_conv_thr": {
+      "type": "Real",
+      "options": [],
+      "default": "1.0D-3",
+      "range": null,
+      "units": "a.u.",
+      "section": "& CONTROL"
+    },
+    "& CONTROL.disk_io": {
+      "type": "String",
+      "options": [
+        "'high'",
+        "'medium'",
+        "'low'",
+        "'nowf'",
+        "'minimal'",
+        "'none'"
+      ],
+      "default": "see below",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.pseudo_dir": {
+      "type": "String",
+      "options": [],
+      "default": "value of the $ESPRESSO_PSEUDO environment variable if set; '$HOME/espresso/pseudo/' otherwise",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.tefield": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.dipfield": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.lelfield": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.nberrycyc": {
+      "type": "Integer",
+      "options": [],
+      "default": "1",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.lorbm": {
+      "type": "Logical",
+      "options": [
+        "'nscf'"
+      ],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.lberry": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.gdir": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.nppstr": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.gate": {
+      "type": "Logical",
+      "options": [
+        "'high'"
+      ],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.twochem": {
+      "type": "Logical",
+      "options": [
+        "'smearing'"
+      ],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.lfcp": {
+      "type": "Logical",
+      "options": [
+        "'relax'",
+        "'md'",
+        "'esm'",
+        "'bc2'",
+        "'bc3'",
+        "'bc1'"
+      ],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& CONTROL.trism": {
+      "type": "Logical",
+      "options": [
+        "'s distributions are calculated by 3D-RISM, though solute is treated as SCF. The charge density and the atomic positions are optimized, simultaneously with the solvents. To perform the calculation, you must set a namelist RISM and a card SOLVENTS . If assume_isolated = '",
+        "' and esm_bc = '"
+      ],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& CONTROL"
+    },
+    "& SYSTEM.ibrav": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.celldm(i), i=1,6": {
+      "type": "Array",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": "bohr",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.A, B, C, cosAB, cosAC, cosBC": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nat": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ntyp": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nbnd": {
+      "type": "Integer",
+      "options": [],
+      "default": "for an insulator, nbnd = number of valence bands ( nbnd = # of electrons /2); for a metal, 20% more (minimum 4 more)",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nbnd_cond": {
+      "type": "Integer",
+      "options": [],
+      "default": "nbnd_cond = nbnd - # of electrons / 2 in the collinear case; nbnd_cond = nbnd - # of electrons in the noncollinear case.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.tot_charge": {
+      "type": "Real",
+      "options": [],
+      "default": "0.0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.starting_charge(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [
+        "'i'",
+        "'atomic'"
+      ],
+      "default": "0.0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.tot_magnetization": {
+      "type": "Real",
+      "options": [],
+      "default": "-10000 [unspecified]",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.starting_magnetization(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [
+        "'i'",
+        "'s magnetic moment. Alternatively, the values can range between -1 and 1, which will be interpreted as the site magnetization per valence electron. For QE-v7.2 and older versions, only the second option is allowed. If you expect a nonzero magnetization in your ground state, you MUST either specify a nonzero value for at least one atomic type, or constrain the magnetization using variable tot_magnetization for LSDA, constrained_magnetization for noncollinear/spin-orbit calculations. If you don'"
+      ],
+      "default": "0",
+      "range": "-1..1",
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ecutwfc": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": "Ry",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ecutrho": {
+      "type": "Real",
+      "options": [],
+      "default": "4 * ecutwfc",
+      "range": null,
+      "units": "Ry",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ecutfock": {
+      "type": "Real",
+      "options": [],
+      "default": "ecutrho",
+      "range": null,
+      "units": "Ry",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nr1, nr2, nr3": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nr1s, nr2s, nr3s": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nosym": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nosym_evc": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.noinv": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.no_t_rev": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.force_symmorphic": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.use_all_frac": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.occupations": {
+      "type": "String",
+      "options": [
+        "'smearing'",
+        "'tetrahedra'",
+        "'tetrahedra_lin'",
+        "'tetrahedra_opt'",
+        "'fixed'",
+        "'from_input'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.one_atom_occupations": {
+      "type": "Logical",
+      "options": [
+        "'from_input'"
+      ],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.starting_spin_angle": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.degauss_cond": {
+      "type": "Real",
+      "options": [],
+      "default": "0.D0 Ry",
+      "range": null,
+      "units": "Ry",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nelec_cond": {
+      "type": "Real",
+      "options": [],
+      "default": "0.D0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.degauss": {
+      "type": "Real",
+      "options": [],
+      "default": "0.D0 Ry",
+      "range": null,
+      "units": "Ry",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.smearing": {
+      "type": "String",
+      "options": [
+        "'gaussian'",
+        "'gauss'",
+        "'methfessel-paxton'",
+        "'m-p'",
+        "'mp'",
+        "'marzari-vanderbilt'",
+        "'cold'",
+        "'m-v'",
+        "'mv'",
+        "'fermi-dirac'",
+        "'f-d'",
+        "'fd'"
+      ],
+      "default": "'gaussian'",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nspin": {
+      "type": "Integer",
+      "options": [],
+      "default": "1",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.sic_gamma": {
+      "type": "Real",
+      "options": [],
+      "default": "0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.pol_type": {
+      "type": "String",
+      "options": [
+        "'e'",
+        "'h'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.sic_energy": {
+      "type": "Logical",
+      "options": [],
+      "default": ".false.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.sci_vb": {
+      "type": "Real",
+      "options": [],
+      "default": "0",
+      "range": null,
+      "units": "eV",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.sci_cb": {
+      "type": "Real",
+      "options": [],
+      "default": "0",
+      "range": null,
+      "units": "eV",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.noncolin": {
+      "type": "Logical",
+      "options": [],
+      "default": ".false.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ecfixed": {
+      "type": "Real",
+      "options": [],
+      "default": "0.0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.qcutz": {
+      "type": "Real",
+      "options": [],
+      "default": "0.0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.q2sigma": {
+      "type": "Real",
+      "options": [],
+      "default": "0.1",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.input_dft": {
+      "type": "String",
+      "options": [
+        "'PBE'",
+        "'BLYP'"
+      ],
+      "default": "read from pseudopotential files",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ace": {
+      "type": "Logical",
+      "options": [],
+      "default": "true",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.exx_fraction": {
+      "type": "Real",
+      "options": [
+        "'PBE0'",
+        "'B3LYP'"
+      ],
+      "default": "it depends on the specified functional",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.screening_parameter": {
+      "type": "Real",
+      "options": [],
+      "default": "0.106",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.exxdiv_treatment": {
+      "type": "String",
+      "options": [
+        "'gygi-baldereschi'",
+        "'vcut_spherical'",
+        "'vcut_ws'",
+        "'none'"
+      ],
+      "default": "'gygi-baldereschi'",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.x_gamma_extrapolation": {
+      "type": "Logical",
+      "options": [],
+      "default": ".true.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ecutvcut": {
+      "type": "Real",
+      "options": [],
+      "default": "0.0 Ry",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nqx1, nqx2, nqx3": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.localization_thr": {
+      "type": "Real",
+      "options": [],
+      "default": "0.0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.Hubbard_occ(ityp,i), (ityp,i) = (1,1) . . . (ntyp,3)": {
+      "type": "Array",
+      "options": [],
+      "default": "read from pseudopotentials",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.Hubbard_beta(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [],
+      "default": "0.D0 for all species",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.starting_ns_eigenvalue(m,ispin,ityp), (m,ispin,ityp) = (1,1,1) . . . (2*lmax+1,nspin or npol,ntyp)": {
+      "type": "Array",
+      "options": [],
+      "default": "-1.d0 that means NOT SET",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.dmft": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.dmft_prefix": {
+      "type": "String",
+      "options": [],
+      "default": "prefix",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ensemble_energies": {
+      "type": "Logical",
+      "options": [
+        "'bee'",
+        "'BEEF-vdW'"
+      ],
+      "default": ".false.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.edir": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.emaxpos": {
+      "type": "Real",
+      "options": [],
+      "default": "0.5D0",
+      "range": "0 < x < 1",
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.eopreg": {
+      "type": "Real",
+      "options": [],
+      "default": "0.1D0",
+      "range": "0 < x < 1",
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.eamp": {
+      "type": "Real",
+      "options": [],
+      "default": "0.001 a.u.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.angle1(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": "degrees",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.angle2(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": "degrees",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.lforcet": {
+      "type": "Logical",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.constrained_magnetization": {
+      "type": "String",
+      "options": [
+        "'none'",
+        "'total'",
+        "'atomic'",
+        "'total direction'",
+        "'atomic direction'"
+      ],
+      "default": "'none'",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.fixed_magnetization(i), i=1,3": {
+      "type": "Array",
+      "options": [
+        "'total'"
+      ],
+      "default": "0.d0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.lambda": {
+      "type": "Real",
+      "options": [],
+      "default": "1.d0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.report": {
+      "type": "Integer",
+      "options": [],
+      "default": "-1",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.lspinorb": {
+      "type": "Logical",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.assume_isolated": {
+      "type": "String",
+      "options": [
+        "'none'",
+        "'makov-payne'",
+        "'m-p'",
+        "'mp'",
+        "'martyna-tuckerman'",
+        "'m-t'",
+        "'mt'",
+        "'esm'",
+        "'2D'",
+        "'prefix.esm1'",
+        "'vc-relax'",
+        "'2Dxy'",
+        "'s thickness could be the interlayer distance in the corresponding layered bulk material. Otherwise, the atomic thickness + 10 bohr should be a safe estimate. There is also a lower limit of 20 bohr imposed by the cutoff radius used to read pseudopotentials (see read_pseudo.f90 in Modules). - As for ESM above, only in-plane stresses make sense and one should use cell_dofree = '"
+      ],
+      "default": "'none'",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.esm_bc": {
+      "type": "String",
+      "options": [
+        "'pbc'",
+        "'bc1'",
+        "'bc2'",
+        "'bc3'",
+        "'esm'"
+      ],
+      "default": "'pbc'",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.esm_w": {
+      "type": "Real",
+      "options": [
+        "'esm'"
+      ],
+      "default": "0.d0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.esm_efield": {
+      "type": "Real",
+      "options": [
+        "'esm'",
+        "'bc2'"
+      ],
+      "default": "0.d0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.esm_nfit": {
+      "type": "Integer",
+      "options": [
+        "'esm'"
+      ],
+      "default": "4",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.lgcscf": {
+      "type": "Logical",
+      "options": [
+        "'esm'",
+        "'bc2'",
+        "'bc3'",
+        "'bc1'",
+        "'TF'",
+        "'local-TF'",
+        "'TF.'"
+      ],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.gcscf_mu": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": "eV",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.gcscf_conv_thr": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D-2",
+      "range": null,
+      "units": "eV",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.gcscf_beta": {
+      "type": "Real",
+      "options": [],
+      "default": "0.05D0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.vdw_corr": {
+      "type": "String",
+      "options": [
+        "'grimme-d2'",
+        "'Grimme-D2'",
+        "'DFT-D'",
+        "'dft-d'",
+        "'grimme-d3'",
+        "'Grimme-D3'",
+        "'DFT-D3'",
+        "'dft-d3'",
+        "'TS'",
+        "'ts'",
+        "'ts-vdw'",
+        "'ts-vdW'",
+        "'tkatchenko-scheffler'",
+        "'MBD'",
+        "'mbd'",
+        "'many-body-dispersion'",
+        "'mbd_vdw'",
+        "'XDM'",
+        "'xdm'",
+        "'s DFT-D2. Optional variables: london_s6 , london_rcut , london_c6 , london_rvdw S. Grimme, J. Comp. Chem. 27, 1787 (2006), doi:10.1002/jcc.20495 V. Barone et al., J. Comp. Chem. 30, 934 (2009), doi:10.1002/jcc.21112 Semiempirical Grimme'"
+      ],
+      "default": "'none'",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.london": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.london_s6": {
+      "type": "Real",
+      "options": [],
+      "default": "0.75",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.london_c6(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [],
+      "default": "standard Grimme-D2 values",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.london_rvdw(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [],
+      "default": "standard Grimme-D2 values",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.london_rcut": {
+      "type": "Real",
+      "options": [],
+      "default": "200",
+      "range": null,
+      "units": "a.u.",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.dftd3_version": {
+      "type": "Integer",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "default": "3",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.dftd3_threebody": {
+      "type": "Logical",
+      "options": [],
+      "default": "TRUE",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ts_vdw_econv_thr": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D-6",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.ts_vdw_isolated": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.xdm": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.xdm_a1": {
+      "type": "Real",
+      "options": [],
+      "default": "0.6836",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.xdm_a2": {
+      "type": "Real",
+      "options": [],
+      "default": "1.5045",
+      "range": null,
+      "units": "angstrom",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.space_group": {
+      "type": "Integer",
+      "options": [],
+      "default": "0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.uniqueb": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.origin_choice": {
+      "type": "Integer",
+      "options": [],
+      "default": "1",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.rhombohedral": {
+      "type": "Logical",
+      "options": [],
+      "default": ".TRUE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.zgate": {
+      "type": "Real",
+      "options": [],
+      "default": "0.5",
+      "range": "0..1",
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.relaxz": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.block": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.block_1": {
+      "type": "Real",
+      "options": [],
+      "default": "0.45",
+      "range": "0..1",
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.block_2": {
+      "type": "Real",
+      "options": [],
+      "default": "0.55",
+      "range": "0..1",
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.block_height": {
+      "type": "Real",
+      "options": [],
+      "default": "0.1",
+      "range": null,
+      "units": "Ry",
+      "section": "& SYSTEM"
+    },
+    "& SYSTEM.nextffield": {
+      "type": "Integer",
+      "options": [],
+      "default": "0",
+      "range": null,
+      "units": null,
+      "section": "& SYSTEM"
+    },
+    "& ELECTRONS.electron_maxstep": {
+      "type": "Integer",
+      "options": [],
+      "default": "100",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.exx_maxstep": {
+      "type": "Integer",
+      "options": [],
+      "default": "100",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.scf_must_converge": {
+      "type": "Logical",
+      "options": [],
+      "default": ".TRUE.",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.conv_thr": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D-6",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.adaptive_thr": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.conv_thr_init": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D-3",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.conv_thr_multi": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D-1",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.mixing_mode": {
+      "type": "String",
+      "options": [
+        "'plain'",
+        "'TF'",
+        "'local-TF'"
+      ],
+      "default": "'plain'",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.mixing_beta": {
+      "type": "Real",
+      "options": [],
+      "default": "0.7D0",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.mixing_ndim": {
+      "type": "Integer",
+      "options": [],
+      "default": "8",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.mixing_fixed_ns": {
+      "type": "Integer",
+      "options": [],
+      "default": "0",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.diagonalization": {
+      "type": "String",
+      "options": [
+        "'david'",
+        "'cg'",
+        "'ppcg'",
+        "'paro'",
+        "'ParO'",
+        "'rmm-davidson'",
+        "'rmm-paro'"
+      ],
+      "default": "'david'",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.diago_thr_init": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.diago_cg_maxiter": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.diago_david_ndim": {
+      "type": "Integer",
+      "options": [],
+      "default": "2",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.diago_rmm_ndim": {
+      "type": "Integer",
+      "options": [],
+      "default": "4",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.diago_rmm_conv": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.diago_gs_nblock": {
+      "type": "Integer",
+      "options": [],
+      "default": "16",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.diago_full_acc": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.efield": {
+      "type": "Real",
+      "options": [],
+      "default": "0.D0",
+      "range": null,
+      "units": "Ry",
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.efield_cart(i), i=1,3": {
+      "type": "Array",
+      "options": [],
+      "default": "(0.D0, 0.D0, 0.D0)",
+      "range": null,
+      "units": "Ry",
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.efield_phase": {
+      "type": "String",
+      "options": [
+        "'read'",
+        "'write'",
+        "'none'"
+      ],
+      "default": "'none'",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.startingpot": {
+      "type": "String",
+      "options": [
+        "'atomic'",
+        "'file'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.startingwfc": {
+      "type": "String",
+      "options": [
+        "'atomic'",
+        "'atomic+random'",
+        "'random'",
+        "'file'",
+        "'cg'"
+      ],
+      "default": "'atomic+random'",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.tqr": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& ELECTRONS.real_space": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& ELECTRONS"
+    },
+    "& IONS.ion_positions": {
+      "type": "String",
+      "options": [
+        "'default'",
+        "'from_input'"
+      ],
+      "default": "'default'",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.ion_velocities": {
+      "type": "String",
+      "options": [
+        "'default'",
+        "'from_input'"
+      ],
+      "default": "'default'",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.ion_dynamics": {
+      "type": "String",
+      "options": [
+        "'bfgs'",
+        "'damp'",
+        "'fire'",
+        "'verlet'",
+        "'velocity-verlet'",
+        "'langevin'",
+        "'langevin-smc'",
+        "'beeman'",
+        "'relax'",
+        "'md'",
+        "'s equation. For constrained dynamics, see CONSTRAINTS card use velocity-Verlet algorithm to integrate Newton'",
+        "'vc-relax'",
+        "'vc-md'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.pot_extrapolation": {
+      "type": "String",
+      "options": [
+        "'none'",
+        "'atomic'",
+        "'first_order'",
+        "'second_order'",
+        "'second-order'"
+      ],
+      "default": "'atomic'",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.wfc_extrapolation": {
+      "type": "String",
+      "options": [
+        "'none'",
+        "'first_order'",
+        "'second_order'",
+        "'second-order'"
+      ],
+      "default": "'none'",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.remove_rigid_rot": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.ion_temperature": {
+      "type": "String",
+      "options": [
+        "'rescaling'",
+        "'rescale-v'",
+        "'rescale-T'",
+        "'reduce-T'",
+        "'nose'",
+        "'berendsen'",
+        "'andersen'",
+        "'svr'",
+        "'initial'",
+        "'not_controlled'"
+      ],
+      "default": "'not_controlled'",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.tempw": {
+      "type": "Real",
+      "options": [],
+      "default": "300.D0",
+      "range": null,
+      "units": "K",
+      "section": "& IONS"
+    },
+    "& IONS.fnosep": {
+      "type": "Real",
+      "options": [
+        "'nose'"
+      ],
+      "default": "1.D0",
+      "range": null,
+      "units": "THz",
+      "section": "& IONS"
+    },
+    "& IONS.nhpcl": {
+      "type": "Integer",
+      "options": [],
+      "default": "1",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.nhptyp": {
+      "type": "Integer",
+      "options": [],
+      "default": "0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.nhgrp(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [],
+      "default": "0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.fnhscl(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [],
+      "default": "(Nat_{total}-1)/Nat_{total}",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.ndega": {
+      "type": "Integer",
+      "options": [],
+      "default": "0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.tolp": {
+      "type": "Real",
+      "options": [],
+      "default": "100.D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.delta_t": {
+      "type": "Real",
+      "options": [
+        "'rescale-T'",
+        "'reduce-T'",
+        "'nraise'"
+      ],
+      "default": "1.D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.nraise": {
+      "type": "Integer",
+      "options": [
+        "'reduce-T'",
+        "'rescale-v'",
+        "'rescaling'",
+        "'vc-md'",
+        "'berendsen'",
+        "'andersen'",
+        "'svr'"
+      ],
+      "default": "1",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.refold_pos": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.upscale": {
+      "type": "Real",
+      "options": [],
+      "default": "100.D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.bfgs_ndim": {
+      "type": "Integer",
+      "options": [],
+      "default": "1",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.tgdiis_step": {
+      "type": "Logical",
+      "options": [],
+      "default": ".true.",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.trust_radius_max": {
+      "type": "Real",
+      "options": [],
+      "default": "0.8D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.trust_radius_min": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D-3",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.trust_radius_ini": {
+      "type": "Real",
+      "options": [],
+      "default": "0.5D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.w_1": {
+      "type": "Real",
+      "options": [],
+      "default": "0.01D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.w_2": {
+      "type": "Real",
+      "options": [],
+      "default": "0.5D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.fire_alpha_init": {
+      "type": "Real",
+      "options": [],
+      "default": "0.2D0",
+      "range": "0.1..0.3",
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.fire_falpha": {
+      "type": "Real",
+      "options": [],
+      "default": "0.99D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.fire_nmin": {
+      "type": "Integer",
+      "options": [],
+      "default": "5",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.fire_f_inc": {
+      "type": "Real",
+      "options": [],
+      "default": "1.1D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.fire_f_dec": {
+      "type": "Real",
+      "options": [],
+      "default": "0.5D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& IONS.fire_dtmax": {
+      "type": "Real",
+      "options": [],
+      "default": "10.D0",
+      "range": null,
+      "units": null,
+      "section": "& IONS"
+    },
+    "& CELL.cell_dynamics": {
+      "type": "String",
+      "options": [
+        "'none'",
+        "'sd'",
+        "'damp-pr'",
+        "'damp-w'",
+        "'bfgs'",
+        "'pr'",
+        "'w'",
+        "'vc-relax'",
+        "'vc-md'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& CELL"
+    },
+    "& CELL.press": {
+      "type": "Real",
+      "options": [],
+      "default": "0.D0",
+      "range": null,
+      "units": null,
+      "section": "& CELL"
+    },
+    "& CELL.wmass": {
+      "type": "Real",
+      "options": [
+        "'vc-md'",
+        "'vc-relax'"
+      ],
+      "default": "0.75*Tot_Mass/pi**2 for Parrinello-Rahman MD; 0.75*Tot_Mass/pi**2/Omega**(2/3) for Wentzcovitch MD",
+      "range": null,
+      "units": null,
+      "section": "& CELL"
+    },
+    "& CELL.cell_factor": {
+      "type": "Real",
+      "options": [],
+      "default": "2.0 for variable-cell calculations, 1.0 otherwise",
+      "range": null,
+      "units": null,
+      "section": "& CELL"
+    },
+    "& CELL.press_conv_thr": {
+      "type": "Real",
+      "options": [
+        "'vc-relax'"
+      ],
+      "default": "0.5D0 Kbar",
+      "range": null,
+      "units": null,
+      "section": "& CELL"
+    },
+    "& CELL.cell_dofree": {
+      "type": "String",
+      "options": [
+        "'all'",
+        "'ibrav'",
+        "'a'",
+        "'b'",
+        "'c'",
+        "'fixa'",
+        "'fixb'",
+        "'fixc'",
+        "'x'",
+        "'y'",
+        "'z'",
+        "'xy'",
+        "'xz'",
+        "'yz'",
+        "'xyz'",
+        "'shape'",
+        "'volume'",
+        "'2Dxy'",
+        "'2Dshape'",
+        "'epitaxial_ab'",
+        "'epitaxial_ac'",
+        "'epitaxial_bc'",
+        "'ibrav+2Dxy'"
+      ],
+      "default": "'all'",
+      "range": null,
+      "units": null,
+      "section": "& CELL"
+    },
+    "& FCP.fcp_mu": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": "eV",
+      "section": "& FCP"
+    },
+    "& FCP.fcp_dynamics": {
+      "type": "String",
+      "options": [
+        "'bfgs'",
+        "'newton'",
+        "'damp'",
+        "'lm'",
+        "'velocity-verlet'",
+        "'verlet'",
+        "'relax'",
+        "'md'",
+        "'s equation. ion_dynamics must be '",
+        "' too Verlet algorithm to integrate Newton'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& FCP"
+    },
+    "& FCP.fcp_conv_thr": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D-2",
+      "range": null,
+      "units": "eV",
+      "section": "& FCP"
+    },
+    "& FCP.fcp_ndiis": {
+      "type": "Integer",
+      "options": [
+        "'newton'"
+      ],
+      "default": "4",
+      "range": null,
+      "units": null,
+      "section": "& FCP"
+    },
+    "& FCP.fcp_mass": {
+      "type": "Real",
+      "options": [],
+      "default": "5.D+6 / (xy area) for ESM only; 5.D+4 / (xy area) for ESM-RISM",
+      "range": null,
+      "units": null,
+      "section": "& FCP"
+    },
+    "& FCP.fcp_velocity": {
+      "type": "Real",
+      "options": [],
+      "default": "determined by fcp_temperature",
+      "range": null,
+      "units": null,
+      "section": "& FCP"
+    },
+    "& FCP.fcp_temperature": {
+      "type": "String",
+      "options": [
+        "'rescaling'",
+        "'rescale-v'",
+        "'rescale-T'",
+        "'reduce-T'",
+        "'berendsen'",
+        "'andersen'",
+        "'initial'",
+        "'not_controlled'",
+        "'s temperature via velocity rescaling (first method) see parameters fpc_tempw and fcp_tolp . control FCP'",
+        "'s temperature via velocity rescaling (third method) see parameter fcp_delta_t reduce FCP'",
+        "'s temperature using \"soft\" velocity rescaling - see parameters fcp_tempw and fcp_nraise control FCP'",
+        "'s velocities to temperature fcp_tempw and leave uncontrolled further on (default) FCP'"
+      ],
+      "default": "ion_temperature",
+      "range": null,
+      "units": null,
+      "section": "& FCP"
+    },
+    "& FCP.fcp_tempw": {
+      "type": "Real",
+      "options": [],
+      "default": "tempw",
+      "range": null,
+      "units": "K",
+      "section": "& FCP"
+    },
+    "& FCP.fcp_tolp": {
+      "type": "Real",
+      "options": [],
+      "default": "tolp",
+      "range": null,
+      "units": null,
+      "section": "& FCP"
+    },
+    "& FCP.fcp_delta_t": {
+      "type": "Real",
+      "options": [
+        "'rescale-T'",
+        "'reduce-T'"
+      ],
+      "default": "delta_t",
+      "range": null,
+      "units": null,
+      "section": "& FCP"
+    },
+    "& FCP.fcp_nraise": {
+      "type": "Integer",
+      "options": [
+        "'reduce-T'",
+        "'rescale-v'",
+        "'berendsen'",
+        "'andersen'"
+      ],
+      "default": "nraise",
+      "range": null,
+      "units": null,
+      "section": "& FCP"
+    },
+    "& FCP.freeze_all_atoms": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& FCP"
+    },
+    "& RISM.nsolv": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.closure": {
+      "type": "String",
+      "options": [
+        "'kh'",
+        "'hnc'"
+      ],
+      "default": "'kh'",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.tempv": {
+      "type": "Real",
+      "options": [],
+      "default": "300.D0",
+      "range": null,
+      "units": "K",
+      "section": "& RISM"
+    },
+    "& RISM.ecutsolv": {
+      "type": "Real",
+      "options": [],
+      "default": "4 * ecutwfc",
+      "range": null,
+      "units": "Ry",
+      "section": "& RISM"
+    },
+    "& RISM.solute_lj(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [
+        "'none'",
+        "'uff'",
+        "'clayff'",
+        "'opls-aa'",
+        "'i'"
+      ],
+      "default": "'uff'",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.solute_epsilon(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [
+        "'i'",
+        "'epsilon'"
+      ],
+      "default": null,
+      "range": null,
+      "units": "kcal/mol",
+      "section": "& RISM"
+    },
+    "& RISM.solute_sigma(i), i=1,ntyp": {
+      "type": "Array",
+      "options": [
+        "'i'",
+        "'sigma'"
+      ],
+      "default": null,
+      "range": null,
+      "units": "angstrom",
+      "section": "& RISM"
+    },
+    "& RISM.starting1d": {
+      "type": "String",
+      "options": [
+        "'zero'",
+        "'file'",
+        "'fix'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.starting3d": {
+      "type": "String",
+      "options": [
+        "'zero'",
+        "'file'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.smear1d": {
+      "type": "Real",
+      "options": [],
+      "default": "2.D0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.smear3d": {
+      "type": "Real",
+      "options": [],
+      "default": "2.D0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.rism1d_maxstep": {
+      "type": "Integer",
+      "options": [],
+      "default": "50000",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.rism3d_maxstep": {
+      "type": "Integer",
+      "options": [],
+      "default": "5000",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.rism1d_conv_thr": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D-8",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.rism3d_conv_thr": {
+      "type": "Real",
+      "options": [],
+      "default": "1.D-5 if lgcscf == .FALSE.; 5.D-6 if lgcscf == .TRUE.",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.mdiis1d_size": {
+      "type": "Integer",
+      "options": [],
+      "default": "20",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.mdiis3d_size": {
+      "type": "Integer",
+      "options": [],
+      "default": "10",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.mdiis1d_step": {
+      "type": "Real",
+      "options": [],
+      "default": "0.5D0",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.mdiis3d_step": {
+      "type": "Real",
+      "options": [],
+      "default": "0.8D0",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.rism1d_bond_width": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.rism1d_dielectric": {
+      "type": "Real",
+      "options": [],
+      "default": "-1.0D0",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.rism1d_molesize": {
+      "type": "Real",
+      "options": [],
+      "default": "2.0D0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.rism1d_nproc": {
+      "type": "Integer",
+      "options": [],
+      "default": "128",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.rism3d_conv_level": {
+      "type": "Real",
+      "options": [
+        "0.0",
+        "0.0<x<1.0",
+        "1.0",
+        "'low'",
+        "'medium'",
+        "'high'"
+      ],
+      "default": "0.1 if laue_both_hands == .FALSE. .AND. lgcscf == .FALSE.; 0.3 if laue_both_hands == .FALSE. .AND. lgcscf == .TRUE.; 0.5 if laue_both_hands == .TRUE.",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.rism3d_planar_average": {
+      "type": "Logical",
+      "options": [
+        "'prefix.rism1'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.laue_nfit": {
+      "type": "Integer",
+      "options": [],
+      "default": "4",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.laue_expand_right": {
+      "type": "Real",
+      "options": [],
+      "default": "-1.0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.laue_expand_left": {
+      "type": "Real",
+      "options": [],
+      "default": "-1.0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.laue_starting_right": {
+      "type": "Real",
+      "options": [],
+      "default": "0.0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.laue_starting_left": {
+      "type": "Real",
+      "options": [],
+      "default": "0.0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.laue_buffer_right": {
+      "type": "Real",
+      "options": [],
+      "default": "8.0 if laue_expand_right > 0.0; -1.0 if laue_expand_right <= 0.0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.laue_buffer_left": {
+      "type": "Real",
+      "options": [],
+      "default": "8.0 if laue_expand_left > 0.0; -1.0 if laue_expand_left <= 0.0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.laue_both_hands": {
+      "type": "Logical",
+      "options": [],
+      "default": ".FALSE.",
+      "range": null,
+      "units": null,
+      "section": "& RISM"
+    },
+    "& RISM.laue_wall": {
+      "type": "String",
+      "options": [
+        "'none'",
+        "'auto'",
+        "'manual'"
+      ],
+      "default": "'auto'",
+      "range": null,
+      "units": "1/r",
+      "section": "& RISM"
+    },
+    "& RISM.laue_wall_z": {
+      "type": "Real",
+      "options": [
+        "'manual'"
+      ],
+      "default": "0.0",
+      "range": null,
+      "units": "a.u.",
+      "section": "& RISM"
+    },
+    "& RISM.laue_wall_rho": {
+      "type": "Real",
+      "options": [
+        "'none'"
+      ],
+      "default": "0.01",
+      "range": null,
+      "units": "1/bohr^3",
+      "section": "& RISM"
+    },
+    "& RISM.laue_wall_epsilon": {
+      "type": "Real",
+      "options": [
+        "'epsilon'",
+        "'none'"
+      ],
+      "default": "0.1",
+      "range": null,
+      "units": "kcal/mol",
+      "section": "& RISM"
+    },
+    "& RISM.laue_wall_sigma": {
+      "type": "Real",
+      "options": [
+        "'sigma'",
+        "'none'"
+      ],
+      "default": "4.0",
+      "range": null,
+      "units": "angstrom",
+      "section": "& RISM"
+    },
+    "& RISM.laue_wall_lj6": {
+      "type": "Logical",
+      "options": [
+        "'none'"
+      ],
+      "default": ".FALSE.",
+      "range": null,
+      "units": "1/r",
+      "section": "& RISM"
+    },
+    "ATOMIC_SPECIES.X": {
+      "type": "String",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_SPECIES"
+    },
+    "ATOMIC_SPECIES.Mass_X": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_SPECIES"
+    },
+    "ATOMIC_SPECIES.PseudoPot_X": {
+      "type": "String",
+      "options": [
+        "'t work, the pseudopotential format is determined by the file name: *.vdb or *.van Vanderbilt US pseudopotential code *.RRKJ3 Andrea Dal Corso'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_SPECIES"
+    },
+    "ATOMIC_POSITIONS.X": {
+      "type": "String",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_POSITIONS"
+    },
+    "ATOMIC_POSITIONS.x , y , z": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_POSITIONS"
+    },
+    "ATOMIC_POSITIONS.if_pos(1) , if_pos(2) , if_pos(3)": {
+      "type": "Array",
+      "options": [],
+      "default": "1",
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_POSITIONS"
+    },
+    "K_POINTS.nks": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "K_POINTS"
+    },
+    "K_POINTS.xk_x , xk_y , xk_z , wk": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "K_POINTS"
+    },
+    "K_POINTS.nk1, nk2, nk3": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "K_POINTS"
+    },
+    "K_POINTS.sk1, sk2, sk3": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "K_POINTS"
+    },
+    "ADDITIONAL_K_POINTS.nks_add": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ADDITIONAL_K_POINTS"
+    },
+    "ADDITIONAL_K_POINTS.k_x , k_y , k_z , wk_": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ADDITIONAL_K_POINTS"
+    },
+    "CELL_PARAMETERS.v1 , v2 , v3": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "CELL_PARAMETERS"
+    },
+    "CONSTRAINTS.nconstr": {
+      "type": "Integer",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "CONSTRAINTS"
+    },
+    "CONSTRAINTS.constr_tol": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "CONSTRAINTS"
+    },
+    "CONSTRAINTS.constr_type": {
+      "type": "String",
+      "options": [
+        "'type_coord'",
+        "'atom_coord'",
+        "'distance'",
+        "'planar_angle'",
+        "'torsional_angle'",
+        "'bennett_proj'",
+        "'potential_wall'"
+      ],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "CONSTRAINTS"
+    },
+    "CONSTRAINTS.constr_target": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": "degrees",
+      "section": "CONSTRAINTS"
+    },
+    "OCCUPATIONS.f_inp1": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "OCCUPATIONS"
+    },
+    "OCCUPATIONS.f_inp2": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "OCCUPATIONS"
+    },
+    "ATOMIC_VELOCITIES.V": {
+      "type": "String",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_VELOCITIES"
+    },
+    "ATOMIC_VELOCITIES.vx , vy , vz": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_VELOCITIES"
+    },
+    "ATOMIC_FORCES.X": {
+      "type": "String",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_FORCES"
+    },
+    "ATOMIC_FORCES.fx , fy , fz": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "ATOMIC_FORCES"
+    },
+    "SOLVENTS.X": {
+      "type": "String",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "SOLVENTS"
+    },
+    "SOLVENTS.Density": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "SOLVENTS"
+    },
+    "SOLVENTS.Molecule": {
+      "type": "String",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "SOLVENTS"
+    },
+    "SOLVENTS.Density_Left": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "SOLVENTS"
+    },
+    "SOLVENTS.Density_Right": {
+      "type": "Real",
+      "options": [],
+      "default": null,
+      "range": null,
+      "units": null,
+      "section": "SOLVENTS"
+    }
+  },
+  "cards": {
+    "ATOMIC_POSITIONS": {
+      "options": [
+        "alat",
+        "bohr",
+        "angstrom",
+        "crystal",
+        "crystal_sg"
+      ],
+      "default": "alat (deprecated)"
+    },
+    "K_POINTS": {
+      "options": [
+        "tpiba",
+        "automatic",
+        "crystal",
+        "gamma",
+        "tpiba_b",
+        "crystal_b",
+        "tpiba_c",
+        "crystal_c"
+      ],
+      "default": "tpiba (default)"
+    },
+    "ADDITIONAL_K_POINTS": {
+      "options": [
+        "tpiba",
+        "crystal",
+        "tpiba_b",
+        "crystal_b",
+        "tpiba_c",
+        "crystal_c"
+      ],
+      "default": "tpiba (default)"
+    },
+    "CELL_PARAMETERS": {
+      "options": [
+        "alat",
+        "bohr",
+        "angstrom"
+      ],
+      "default": "alat (deprecated)"
+    },
+    "SOLVENTS": {
+      "options": [
+        "1/cell",
+        "mol/L",
+        "g/cm^3"
+      ],
+      "default": null
+    },
+    "HUBBARD": {
+      "options": [
+        "atomic",
+        "ortho-atomic",
+        "norm-atomic",
+        "wf",
+        "pseudo"
+      ],
+      "default": null
+    }
+  }
+}

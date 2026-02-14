@@ -1,0 +1,103 @@
+{
+  "name": "QE Input",
+  "scopeName": "source.qe-input",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#sections"
+    },
+    {
+      "include": "#cards"
+    },
+    {
+      "include": "#booleans"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#assignments"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.exclamation.qe-input",
+          "match": "!.*$"
+        },
+        {
+          "name": "comment.line.number-sign.qe-input",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "sections": {
+      "patterns": [
+        {
+          "name": "keyword.other.section.qe-input",
+          "match": "^\\s*&\\s*[A-Za-z_]+"
+        },
+        {
+          "name": "keyword.other.section.end.qe-input",
+          "match": "^\\s*/\\s*$"
+        }
+      ]
+    },
+    "cards": {
+      "patterns": [
+        {
+          "name": "keyword.other.card.qe-input",
+          "match": "^\\s*(ATOMIC_POSITIONS|ATOMIC_SPECIES|K_POINTS|CELL_PARAMETERS|CONSTRAINTS|OCCUPATIONS|ATOMIC_FORCES|SOLVENTS|CELL_DOFREE)\\b"
+        }
+      ]
+    },
+    "assignments": {
+      "patterns": [
+        {
+          "name": "variable.other.assignment.qe-input",
+          "match": "\\b[A-Za-z_][A-Za-z0-9_]*(?:\\([^\\)]*\\))?\\s*(?==)"
+        },
+        {
+          "name": "keyword.operator.assignment.qe-input",
+          "match": "="
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.qe-input",
+          "begin": "'",
+          "end": "'"
+        },
+        {
+          "name": "string.quoted.double.qe-input",
+          "begin": "\"",
+          "end": "\""
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.qe-input",
+          "match": "(?i)\\.(true|false)\\."
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.qe-input",
+          "match": "(?i)(?:[+-]?\\d+(?:\\.\\d*)?|\\.\\d+)(?:[de][+-]?\\d+)?"
+        }
+      ]
+    }
+  }
+}

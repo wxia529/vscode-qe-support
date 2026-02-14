@@ -1,0 +1,664 @@
+{
+  "variables": {
+    "& CONTROL.restart_mode": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.nstep": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.dt": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& CONTROL.outdir": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.wfcdir": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.max_seconds": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.etot_conv_thr": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& CONTROL.forc_conv_thr": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& CONTROL.disk_io": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.dipfield": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.nberrycyc": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.gdir": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.gate": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.twochem": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.lfcp": {
+      "range": null,
+      "units": null
+    },
+    "& CONTROL.trism": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.ibrav": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.celldm(i), i=1,6": {
+      "range": null,
+      "units": "bohr"
+    },
+    "& SYSTEM.A, B, C, cosAB, cosAC, cosBC": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.nat": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.ntyp": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.nbnd": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.nbnd_cond": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.starting_magnetization(i), i=1,ntyp": {
+      "range": "-1..1",
+      "units": null
+    },
+    "& SYSTEM.ecutwfc": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& SYSTEM.ecutrho": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& SYSTEM.ecutfock": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& SYSTEM.nosym": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.nosym_evc": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.noinv": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.no_t_rev": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.force_symmorphic": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.use_all_frac": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.occupations": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.starting_spin_angle": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.degauss_cond": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& SYSTEM.nelec_cond": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.degauss": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& SYSTEM.smearing": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.nspin": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.pol_type": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.sic_energy": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.sci_vb": {
+      "range": null,
+      "units": "eV"
+    },
+    "& SYSTEM.sci_cb": {
+      "range": null,
+      "units": "eV"
+    },
+    "& SYSTEM.q2sigma": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.ace": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.screening_parameter": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.x_gamma_extrapolation": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.nqx1, nqx2, nqx3": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.localization_thr": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.Hubbard_occ(ityp,i), (ityp,i) = (1,1) . . . (ntyp,3)": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.Hubbard_beta(i), i=1,ntyp": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.dmft": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.edir": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.emaxpos": {
+      "range": "0 < x < 1",
+      "units": null
+    },
+    "& SYSTEM.eopreg": {
+      "range": "0 < x < 1",
+      "units": null
+    },
+    "& SYSTEM.eamp": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.angle1(i), i=1,ntyp": {
+      "range": null,
+      "units": "degrees"
+    },
+    "& SYSTEM.angle2(i), i=1,ntyp": {
+      "range": null,
+      "units": "degrees"
+    },
+    "& SYSTEM.lforcet": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.constrained_magnetization": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.assume_isolated": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.esm_bc": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.esm_w": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& SYSTEM.lgcscf": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.gcscf_mu": {
+      "range": null,
+      "units": "eV"
+    },
+    "& SYSTEM.gcscf_conv_thr": {
+      "range": null,
+      "units": "eV"
+    },
+    "& SYSTEM.vdw_corr": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.london_rcut": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& SYSTEM.dftd3_threebody": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.ts_vdw_econv_thr": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.ts_vdw_isolated": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.xdm_a1": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.xdm_a2": {
+      "range": null,
+      "units": "angstrom"
+    },
+    "& SYSTEM.space_group": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.origin_choice": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.rhombohedral": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.zgate": {
+      "range": "0..1",
+      "units": null
+    },
+    "& SYSTEM.block": {
+      "range": null,
+      "units": null
+    },
+    "& SYSTEM.block_1": {
+      "range": "0..1",
+      "units": null
+    },
+    "& SYSTEM.block_2": {
+      "range": "0..1",
+      "units": null
+    },
+    "& SYSTEM.block_height": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& ELECTRONS.electron_maxstep": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.exx_maxstep": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.mixing_ndim": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.mixing_fixed_ns": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.diagonalization": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.diago_thr_init": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.diago_david_ndim": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.efield": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& ELECTRONS.efield_cart(i), i=1,3": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& ELECTRONS.efield_phase": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.startingpot": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.startingwfc": {
+      "range": null,
+      "units": null
+    },
+    "& ELECTRONS.real_space": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.ion_positions": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.remove_rigid_rot": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.tempw": {
+      "range": null,
+      "units": "K"
+    },
+    "& IONS.fnosep": {
+      "range": null,
+      "units": "THz"
+    },
+    "& IONS.nhpcl": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.nhgrp(i), i=1,ntyp": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.fnhscl(i), i=1,ntyp": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.ndega": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.delta_t": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.nraise": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.refold_pos": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.bfgs_ndim": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.trust_radius_max": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.trust_radius_min": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.trust_radius_ini": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.w_2": {
+      "range": null,
+      "units": null
+    },
+    "& IONS.fire_alpha_init": {
+      "range": "0.1..0.3",
+      "units": null
+    },
+    "& IONS.fire_dtmax": {
+      "range": null,
+      "units": null
+    },
+    "& CELL.press": {
+      "range": null,
+      "units": null
+    },
+    "& CELL.cell_factor": {
+      "range": null,
+      "units": null
+    },
+    "& CELL.cell_dofree": {
+      "range": null,
+      "units": null
+    },
+    "& FCP.fcp_mu": {
+      "range": null,
+      "units": "eV"
+    },
+    "& FCP.fcp_dynamics": {
+      "range": null,
+      "units": null
+    },
+    "& FCP.fcp_conv_thr": {
+      "range": null,
+      "units": "eV"
+    },
+    "& FCP.fcp_tempw": {
+      "range": null,
+      "units": "K"
+    },
+    "& FCP.fcp_delta_t": {
+      "range": null,
+      "units": null
+    },
+    "& FCP.fcp_nraise": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.nsolv": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.closure": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.tempv": {
+      "range": null,
+      "units": "K"
+    },
+    "& RISM.ecutsolv": {
+      "range": null,
+      "units": "Ry"
+    },
+    "& RISM.solute_lj(i), i=1,ntyp": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.solute_epsilon(i), i=1,ntyp": {
+      "range": null,
+      "units": "kcal/mol"
+    },
+    "& RISM.solute_sigma(i), i=1,ntyp": {
+      "range": null,
+      "units": "angstrom"
+    },
+    "& RISM.starting1d": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.starting3d": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.smear1d": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.smear3d": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.rism1d_maxstep": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.rism3d_maxstep": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.mdiis1d_size": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.mdiis3d_size": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.mdiis1d_step": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.mdiis3d_step": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.rism1d_bond_width": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.rism1d_dielectric": {
+      "range": null,
+      "units": null
+    },
+    "& RISM.rism1d_molesize": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.laue_expand_right": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.laue_expand_left": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.laue_starting_right": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.laue_starting_left": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.laue_buffer_right": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.laue_buffer_left": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.laue_wall": {
+      "range": null,
+      "units": "1/r"
+    },
+    "& RISM.laue_wall_z": {
+      "range": null,
+      "units": "a.u."
+    },
+    "& RISM.laue_wall_rho": {
+      "range": null,
+      "units": "1/bohr^3"
+    },
+    "& RISM.laue_wall_epsilon": {
+      "range": null,
+      "units": "kcal/mol"
+    },
+    "& RISM.laue_wall_sigma": {
+      "range": null,
+      "units": "angstrom"
+    },
+    "& RISM.laue_wall_lj6": {
+      "range": null,
+      "units": "1/r"
+    },
+    "ATOMIC_SPECIES.Mass_X": {
+      "range": null,
+      "units": null
+    },
+    "ATOMIC_SPECIES.PseudoPot_X": {
+      "range": null,
+      "units": null
+    },
+    "ATOMIC_POSITIONS.x , y , z": {
+      "range": null,
+      "units": null
+    },
+    "ATOMIC_POSITIONS.if_pos(1) , if_pos(2) , if_pos(3)": {
+      "range": null,
+      "units": null
+    },
+    "K_POINTS.xk_x , xk_y , xk_z , wk": {
+      "range": null,
+      "units": null
+    },
+    "K_POINTS.sk1, sk2, sk3": {
+      "range": null,
+      "units": null
+    },
+    "CELL_PARAMETERS.v1 , v2 , v3": {
+      "range": null,
+      "units": null
+    },
+    "CONSTRAINTS.constr_target": {
+      "range": null,
+      "units": "degrees"
+    },
+    "SOLVENTS.Molecule": {
+      "range": null,
+      "units": null
+    },
+    "SOLVENTS.Density_Left": {
+      "range": null,
+      "units": null
+    },
+    "SOLVENTS.Density_Right": {
+      "range": null,
+      "units": null
+    }
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "variables": {
+    "& CONTROL.tstress": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": []
+    },
+    "& CONTROL.tprnfor": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": []
+    },
+    "& CONTROL.trism": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "assume_isolated = 'esm'"
+      ]
+    },
+    "& SYSTEM.ibrav": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": []
+    },
+    "& SYSTEM.celldm(i), i=1,6": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "ibrav == 0"
+      ]
+    },
+    "& SYSTEM.A, B, C, cosAB, cosAC, cosBC": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "ibrav == 0"
+      ]
+    },
+    "& SYSTEM.nat": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "is == .TRUE."
+      ]
+    },
+    "& SYSTEM.ecutrho": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": []
+    },
+    "& SYSTEM.nr1s, nr2s, nr3s": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "ecutrho = 4"
+      ]
+    },
+    "& SYSTEM.esm_bc": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "assume_isolated = 'esm'"
+      ]
+    },
+    "& SYSTEM.esm_w": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "assume_isolated = 'esm'"
+      ]
+    },
+    "& SYSTEM.esm_efield": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "assume_isolated = 'esm'"
+      ]
+    },
+    "& SYSTEM.esm_nfit": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "assume_isolated = 'esm'"
+      ]
+    },
+    "& SYSTEM.dftd3_threebody": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "dftd3_version = 2"
+      ]
+    },
+    "& IONS.ion_velocities": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "is == .TRUE."
+      ]
+    },
+    "& IONS.remove_rigid_rot": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "is == .TRUE."
+      ]
+    },
+    "& IONS.fnosep": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "is == .TRUE."
+      ]
+    },
+    "& IONS.delta_t": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "ion_temperature == 'rescale-T'",
+        "ion_temperature == 'reduce-T'"
+      ]
+    },
+    "& IONS.nraise": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "ion_temperature == 'reduce-T'",
+        "ion_temperature == 'rescale-v'"
+      ]
+    },
+    "& FCP.fcp_ndiis": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "fcp_dynamics = 'newton'"
+      ]
+    },
+    "& FCP.fcp_delta_t": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "fcp_temperature == 'rescale-T'",
+        "fcp_temperature == 'reduce-T'"
+      ]
+    },
+    "& FCP.fcp_nraise": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "fcp_temperature == 'reduce-T'",
+        "fcp_temperature == 'rescale-v'"
+      ]
+    },
+    "& RISM.rism1d_dielectric": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "rism1d_dielectric > 0"
+      ]
+    },
+    "& RISM.rism1d_molesize": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "rism1d_dielectric > 0",
+        "to == .TRUE."
+      ]
+    },
+    "& RISM.laue_wall_z": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "laue_expand_right > 0",
+        "laue_expand_left > 0"
+      ]
+    },
+    "K_POINTS.xk_x , xk_y , xk_z , wk": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "be == .TRUE."
+      ]
+    },
+    "SOLVENTS.Density": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "is == .TRUE."
+      ]
+    },
+    "SOLVENTS.Density_Left": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "is == .TRUE."
+      ]
+    },
+    "SOLVENTS.Density_Right": {
+      "requires": [],
+      "conflicts": [],
+      "implies": [],
+      "validWhen": [
+        "is == .TRUE."
+      ]
+    }
+  }
+}
